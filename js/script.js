@@ -21,11 +21,24 @@ window.onscroll = () => {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            })
+            });
+
+            sec.classList.add('show-animate')
+        }
+
+        else {
+            sec.classList.remove('show-animate')
         }
     })
 
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY> 100);
+
+    menuIcon.classList.remove('bx-x')
+    navbar.classList.remove('active')  
+    
+    let footer = document.querySelector('footer');
+
+    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight)
 }
